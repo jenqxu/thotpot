@@ -21,9 +21,9 @@ A hot pot matchmaker where people will be able to find other people based on the
 
 ## Use
 - When user first opens the app, they will have access to the log-in page or create an account. Here they will choose their personal preferences.  
-- Once the user has a profile, they will have a feed where they can look through other profiles of random users or search for specific users. 
-- Users can connect with each other and create an event. The event will then be displayed on the profiles of the useres involved. 
-- Other users will then see the event on these profiles, and they can choose to connect in order to join this event. 
+- User has the choice to create an event as the owner or to join the event. 
+- User will also have a feed where they can see available events or search for specific events. 
+
 
 
 
