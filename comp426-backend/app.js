@@ -23,6 +23,10 @@ app.use(bearerToken());
 app.use(cookieParser());
 app.use(cors());
 
+// for testing purposes of linking frontend to backend
+// let testAPIRouter = require("./routes/test");
+// app.use("/test", testAPIRouter);
+
 // auto-wire routes. Must export default router, and a prefix.
 const files = fs.readdirSync(path.join(__dirname, 'routes'));
 files.forEach(file => {
