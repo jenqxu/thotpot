@@ -12,22 +12,14 @@ i.Nav {
 .Nav-menus {
     display: flex;
     flex-direction: row;
-    height: 77px;
+    height: 50px;
     width: 70%;
     margin: 0 auto;
     padding: 26px 40px;
   }
-.Nav-brand {
-    display: flex;
-    background-position: -176px 0px;
-    background-size: 405px 379px;
-    background-repeat: no-repeat;
-    height: 100px;
-    width: 200px;
-    text-indent: -1000%
-  }
 
 .logo {
+    display: inline-flex;
     width: 200px;
-    height: 200px;
+    height: 50px;
 }
