@@ -1,0 +1,75 @@
+
+.description {
+    position: relative;
+    max-width: 800px; /* Maximum width */
+    margin: 0 auto; /* Center it */
+  }
+
+.event-name{
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bold;
+    margin-right: 65%;
+    margin-top: 0%;
+    font-size: large;
+}
+  
+  .description .content {
+    position: absolute; /* Position the background text */
+    bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    width: 100%; /* Full width */
+    padding: 20px; /* Some padding */
+  }
+
+ /* src/components/Post/Post.css */
+ .Post {
+    border-radius: 3px;
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+    margin-bottom: 60px;
+    margin-left : 30%;
+    margin-right: 30%;
+    margin-top: 5%;
+  }
+
+.Avatar{
+    display: block;
+    max-width: 100%;
+    max-height: 100%
+}
+
+h5 strong {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bold;
+  }
+
+
+
+.describers {
+    bottom: 8px;
+    left: 16px;
+    color: grey;
+  }
+
+.calendar-logo {
+    width: 25px;
+    height: auto;
+    opacity: 0.2;
+}
+
+.location-logo {
+    width: 25px;
+    height: auto;
+    opacity: 0.2;
+}
+
+.members-logo {
+    width: 25px;
+    height: auto;
+    opacity: 0.2; 
+}
+
+
+
