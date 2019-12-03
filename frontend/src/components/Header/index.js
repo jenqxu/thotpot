@@ -3,24 +3,24 @@ import './Header.css';
 import Logo from './logoWithText.svg';
 import { Button, ButtonToolbar, ButtonGroup, Form, Modal } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
+import {GoogleLogin} from 'react-google-login';
 
 class Header extends Component {
   constructor(props) {
     super(props);
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
-
     this.state = {
       show: null
     };
   }
 
   handleClose() {
-    this.setState({show: false});
+    this.setState({ show: false });
   }
 
   handleShow(id) {
-    this.setState({show: id});
+    this.setState({ show: id });
   }
 
   render() {
@@ -53,15 +53,15 @@ class Header extends Component {
                   </Modal.Header>
                   <Modal.Body>
                     <Form>
-                      <Form.Group controlId="fromBasicName">
-                        <Form.Label>First Name</Form.Label>
+                      <Form.Group controlId="formBasicFirstName">
                         <Form.Control type="email" placeholder="First Name" />
-                        <Form.Label>Last Name</Form.Label>
+                      </Form.Group>
+
+                      <Form.Group controlId="formBasicLastName">
                         <Form.Control type="email" placeholder="Last Name" />
                       </Form.Group>
 
                       <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
                         <Form.Control type="email" placeholder="Enter email" />
                         <Form.Text className="text-muted">
                           We'll never share your email with anyone else.
@@ -69,13 +69,22 @@ class Header extends Component {
                       </Form.Group>
 
                       <Form.Group controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
                         <Form.Control type="password" placeholder="Password" />
                       </Form.Group>
 
-                      <Button variant="outline-dark float-right" type="submit">
+                    <ButtonToolbar className='float-right justify-content-between'>
+                      <Button variant="outline-dark" type="submit">
                         Submit
  				        	    </Button>
+                      <GoogleLogin
+                        clientId = '658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com'
+                        buttonText="Login"
+                        // onSuccess={responseGoogle}
+                        // onFailure={responseGoogle}
+                        cookiePolicy={'single_host_origin'}
+                      />
+
+                    </ButtonToolbar>
                     </Form>
                   </Modal.Body>
                 </Modal>
