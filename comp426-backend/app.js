@@ -18,7 +18,7 @@ app.use(require('morgan')('dev'));
 require('./data/DataStore');
 
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 app.use(bearerToken());
 app.use(cookieParser());
 app.use(cors());
