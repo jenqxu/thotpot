@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import './Post.css'
-import {Button, ButtonToolbar, ButtonGroup} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import calLogo from './calendar-logo.jpg'
 import locLogo from './location-logo.jpg'
 import memLogo from './members-logo.png'
+import axios from "axios"
 
 
 //Renders a post
@@ -17,6 +18,8 @@ class Post extends Component{
     render(){
         return(
             <div className = "Post">
+
+
                 <p className="Event">
                     <img className="Avatar" src="https://www.misstamchiak.com/wp-content/uploads/2018/11/P1120837-12-e1542903288155.jpg" alt="Avatar">
                     </img>
@@ -35,7 +38,7 @@ class Post extends Component{
                 </div>
 
                 <div className="Post-join">
-                    <Button className='Post-join-button' variant='outline-dark'>Join</Button>
+                    <Button className='Post-join-button' variant='outline-dark' onClick={this.hasChanged}>Join</Button>
                 </div>
             </div>
         );

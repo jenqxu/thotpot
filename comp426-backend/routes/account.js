@@ -1,3 +1,4 @@
+
 import express from "express";
 import {authenticateUser} from "../middlewares/auth";
 import bcrypt from 'bcrypt';
@@ -10,7 +11,6 @@ export const prefix = '/account';
 const saltRounds = 10;
 
 const {accountStore} = require('../data/DataStore');
-
 
 /**
  * This route requires a valid JWT token.
@@ -61,12 +61,14 @@ router.post('/login', async function (req, res) {
   res.send({jwt: token, data: userData, name});
 });
 
+
 /**
  * Given a name and pass, will create a user
  * if one with that name doesn't exist in the
  * database.
  */
 router.post('/create', function (req, res) {
+
   if (!req.body.name || !req.body.pass) {
     res.status(401).send({msg: 'Expected a payload of name and pass.'});
     return;
