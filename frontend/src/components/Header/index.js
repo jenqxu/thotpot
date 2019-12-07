@@ -44,7 +44,8 @@ class Header extends Component {
         'data': {
           'last':last,
           'email': email,
-        }
+        },
+        type:'merge'
        }).then(res => {
         alert('i think');
       }).catch(error => {
@@ -52,7 +53,6 @@ class Header extends Component {
         });
 
       this.handleClose();
-
   }
 
 
@@ -83,6 +83,17 @@ class Header extends Component {
       }
     });
   }
+
+  handleLogOut = event =>{
+    event.preventDefault(); 
+    let authtoken = localStorage.getItem("JWT");
+    if (authtoken === null){
+      alert("You are not logged in");
+    } else {
+      alert("Logging out");
+      localStorage.removeItem("JWT");
+    }
+  }
  
 
   //once logged in, you'll get a jwt token as a response
@@ -97,11 +108,12 @@ class Header extends Component {
       'name':name,
       'pass':pass
     }).then(res => {
-      alert(res.data.jwt);
+      //alert(res.data.jwt);
       let authtoken = res.data.jwt; 
       localStorage.setItem("JWT", authtoken);
       //localStorage.removeItem('myCat');
       //var cat = localStorage.getItem('myCat');
+      alert("logged in");
     }).catch(error => {
       alert("i think not");
       });
@@ -110,6 +122,7 @@ class Header extends Component {
   
   }
 
+  //Essentially a test for /account/status
   componentDidMount(){
     let authtoken = localStorage.getItem('JWT');
     axios.get('http://localhost:9000/account/status', {
@@ -230,6 +243,14 @@ class Header extends Component {
                     </Form>
                   </Modal.Body>
                 </Modal>
+
+                <Button
+                  variant='outline-dark'
+                  onClick={this.handleLogOut}
+                >
+                  Log out
+                </Button>
+               
               </ButtonGroup>
             </div>
           </ButtonToolbar>

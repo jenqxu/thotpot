@@ -1,2 +1,56 @@
 {
+  "create": {
+    "description": "pls",
+    "location": "",
+    "date": "2019-12-07T04:36:40.112Z",
+    "members": []
+  },
+  "events": {
+    "yu": {
+      "eventName": "pls",
+      "data": {
+        "description": "pls",
+        "location": "",
+        "date": "2019-12-07T04:36:40.112Z",
+        "members": []
+      }
+    },
+    "aylin": {
+      "eventName": "la",
+      "data": {
+        "description": "la",
+        "location": "",
+        "date": "2019-12-15T04:51:01.000Z",
+        "members": []
+      }
+    },
+    "xu": {
+      "hostEvents": {
+        "eventName": "xu",
+        "data": {
+          "description": "xu",
+          "location": "",
+          "date": "2019-12-07T05:15:48.940Z",
+          "members": [
+            "aylin",
+            "aylin",
+            "xu"
+          ]
+        }
+      }
+    },
+    "jen": [
+      {
+        "eventName": "pls",
+        "data": {
+          "description": "work",
+          "location": "",
+          "date": "2019-12-07T06:08:29.322Z",
+          "members": [
+            "jen"
+          ]
+        }
+      }
+    ]
+  }
 }

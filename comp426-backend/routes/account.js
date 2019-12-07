@@ -99,3 +99,10 @@ async function checkUser(username, password) {
   const user = accountStore.get(`users.${username}`);
   return await bcrypt.compare(password, user.passwordHash);
 }
+
+
+router.delete('/:username', function (req, res) {
+  const {username} = req.params;
+  accountStore.del(`users.${username}`);
+  res.send({status: `'${username}' deleted.`});
+});
