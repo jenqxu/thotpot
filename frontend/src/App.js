@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header'
 import Post from './components/Post'
+import HPEvent from './components/HPEvent'
 
 class App extends Component {
   // constructor(props) {
@@ -43,6 +44,7 @@ class App extends Component {
       <div className = "App"> 
         <Header/>
         <Post />
+        <HPEvent />
       </div>
       
     );

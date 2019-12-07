@@ -112,6 +112,13 @@
         "last": "xu",
         "email": "xu@gmail.com"
       }
+    },
+    "aylin": {
+      "passwordHash": "$2b$10$Cun/UUCWULJ9U2iruhrJiOuZPwvarRkhNAccDAmpxcKgmE4/0ln8a",
+      "data": {
+        "last": "aylin",
+        "email": "aylin@gmail.com"
+      }
     }
   }
 }
