@@ -92,13 +92,6 @@
         }
       }
     },
-    "jen": {
-      "passwordHash": "$2b$10$sDwqifA.SSz29tRs3W5O2OQrtpJK69NkHV/b3YqX.NpdN9Sm0nkie",
-      "data": {
-        "last": "jen",
-        "email": "jen@gmail.com"
-      }
-    },
     "xu": {
       "passwordHash": "$2b$10$04R00Q/c1ayNvHFGF7hIz.DJWDipZIkI6tPBFBlkuYTHisXvGHU6S",
       "data": {
@@ -118,6 +111,13 @@
       "data": {
         "last": "la",
         "email": "la@gmail.com"
+      }
+    },
+    "jen": {
+      "passwordHash": "$2b$10$TWV30kxYb8As15Toi/vOter.H5ivM5mZUOqS9pNnK18Q9aIUFTri6",
+      "data": {
+        "last": "jen",
+        "email": "jen@gmail.com"
       }
     }
   }

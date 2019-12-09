@@ -2,19 +2,10 @@
   "jen": {
     "event": [
       {
-        "eventName": "hey"
+        "eventName": "one"
       },
       {
-        "eventName": "beg"
-      },
-      {
-        "eventName": "qiu"
-      },
-      {
-        "eventName": "welp"
-      },
-      {
-        "eventName": "hey"
+        "eventName": "two"
       }
     ]
   }

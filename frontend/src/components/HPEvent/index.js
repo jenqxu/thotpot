@@ -51,10 +51,6 @@ class HPEvent extends Component {
         let location = this.state.data.location;
         let date = this.state.data.date;
 
-
-        //AUTHENTICATE THE  USER
-
-
         //Get the Host's data and put it into 'host' and 'members'
         let authtoken = localStorage.getItem('JWT');
         axios.get('http://localhost:9000/account/status', {
@@ -79,7 +75,7 @@ class HPEvent extends Component {
                         'members': members
                     },
                 }).then(res => {
-                    alert('i think create-event worked');
+                    alert('Event created');
                 }).catch(error => {
                     alert("i think create-event didn't work");
                     });

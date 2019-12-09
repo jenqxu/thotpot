@@ -25,7 +25,7 @@ router.get('/*', parseGet, function (req, res) {
 });
 
 /**
- * jen's try.... given name and data
+ * given name and data
  */
 router.post('/event', parsePost, function(req,res){
   const result = req.handlePost(userStore);
@@ -44,12 +44,23 @@ router.post('/*', parsePost, function (req, res) {
 
 });
 
+/**
+ * given name... try to delete from user store
+ */
+router.delete('/:username', parseDelete, function (req, res) {
+  
+  const {username} = req.params;
+  userStore.del(`${username}`);
+  res.send({status: `'${username}' deleted.`});
+  
 
-router.delete('/*', parseDelete, function (req, res) {
+  /*
   const result = req.handleDelete(userStore);
   if (typeof result !== 'undefined') {
     res.send({result})
   }
+  */
+
 });
 
 
