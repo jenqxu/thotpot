@@ -36,7 +36,9 @@ class Header extends Component {
     const pass = this.state.pass; 
     const last = this.state.data.last; 
     const name = this.state.name;
+
     
+    //post account info to the Account storage
     axios.post('http://localhost:9000/account/create',
        {
         'name':name,
@@ -45,11 +47,10 @@ class Header extends Component {
           'last':last,
           'email': email,
         },
-        type:'merge'
        }).then(res => {
-        alert('i think');
+        alert('i think - account created');
       }).catch(error => {
-        alert("i think not");
+        alert("i think not - account couldn't be created");
         });
 
       this.handleClose();
@@ -122,6 +123,20 @@ class Header extends Component {
   
   }
 
+  handleDelete = event =>{
+    event.preventDefault();
+    const name = this.state.name;
+    let authtoken = localStorage.getItem("JWT");
+    if (authtoken === null){
+      alert("You are not logged in");
+    } else {
+      alert("Deleting account");
+      localStorage.removeItem("JWT");
+    }
+    axios.delete(`http://localhost:9000/account/${name}`).then(res => {alert('Account deleted')}).catch(error => alert('think not deleting account'));
+
+  }
+
   //Essentially a test for /account/status
   componentDidMount(){
     let authtoken = localStorage.getItem('JWT');
@@ -133,7 +148,7 @@ class Header extends Component {
       //alert('worke?');
       //alert(res.data.user.name);
     }).catch(error => {
-      alert("i think not");
+      alert("You are not logged in");
       });
   }
 
@@ -249,6 +264,13 @@ class Header extends Component {
                   onClick={this.handleLogOut}
                 >
                   Log out
+                </Button>
+
+                <Button
+                  variant='outline-dark'
+                  onClick={this.handleDelete}
+                >
+                  Delete account
                 </Button>
                
               </ButtonGroup>
