@@ -51,6 +51,10 @@ class HPEvent extends Component {
         let location = this.state.data.location;
         let date = this.state.data.date;
 
+
+        //AUTHENTICATE THE  USER
+
+
         //Get the Host's data and put it into 'host' and 'members'
         let authtoken = localStorage.getItem('JWT');
         axios.get('http://localhost:9000/account/status', {
@@ -63,6 +67,7 @@ class HPEvent extends Component {
             this.state.data.members.push(host);
             let members = this.state.data.members;
             
+            //add the event to Public data storage
             axios.post(`http://localhost:9000/public/create/`,
                 {
                     'host':host,
@@ -73,12 +78,21 @@ class HPEvent extends Component {
                         'date': date,
                         'members': members
                     },
-                    type:'merge'
                 }).then(res => {
                     alert('i think create-event worked');
                 }).catch(error => {
                     alert("i think create-event didn't work");
                     });
+            
+
+            //add the event to the User data storage
+           axios.post(`http://localhost:9000/user/event`, {
+                'data':[{
+                    'eventName': this.state.eventName,
+                }], 'type':'merge'},
+                {'headers': {Authorization: `Bearer ${authtoken}`}
+            }).then(res => {//alert("i think user post worked")
+            }).catch(error => {alert("i think user post didn't work")});
 
         }).catch(error => {
             alert("i think not");
@@ -123,8 +137,9 @@ class HPEvent extends Component {
                     className = "button-event"
                     onClick={()=> this.handleCreateShow('modal1')}
                     >
-                    Create an event
+                    Create an event!
                     </Button>
+                    
                     <Modal
                         size='lg'
                         aria-labelledby='contained-modal-vcenter'

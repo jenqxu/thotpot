@@ -16,6 +16,7 @@ const {userStore} = require('../data/DataStore');
  */
 router.use([authenticateUser, modifyUserPath]);
 
+
 router.get('/*', parseGet, function (req, res) {
   const result = req.handleGet(userStore);
   if (typeof result !== 'undefined') {
@@ -23,12 +24,26 @@ router.get('/*', parseGet, function (req, res) {
   }
 });
 
+/**
+ * jen's try.... given name and data
+ */
+router.post('/event', parsePost, function(req,res){
+  const result = req.handlePost(userStore);
+
+    if (typeof result !== 'undefined') {
+      res.send({result})
+    }
+
+});
+
 router.post('/*', parsePost, function (req, res) {
   const result = req.handlePost(userStore);
   if (typeof result !== 'undefined') {
     res.send({result})
   }
+
 });
+
 
 router.delete('/*', parseDelete, function (req, res) {
   const result = req.handleDelete(userStore);
@@ -36,3 +51,6 @@ router.delete('/*', parseDelete, function (req, res) {
     res.send({result})
   }
 });
+
+
+

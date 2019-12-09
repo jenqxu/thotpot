@@ -39,18 +39,65 @@
         }
       }
     },
-    "jen": [
-      {
-        "eventName": "pls",
-        "data": {
-          "description": "work",
-          "location": "",
-          "date": "2019-12-07T06:08:29.322Z",
-          "members": [
-            "jen"
-          ]
-        }
+    "jen": {
+      "eventName": "two",
+      "data": {
+        "description": "two",
+        "location": "",
+        "date": "2019-12-09T06:44:08.000Z",
+        "members": [
+          "jen"
+        ]
+      },
+      "date": "2019-12-09T06:44:08.000Z"
+    },
+    "jen-one": {
+      "host": "jen",
+      "eventName": "one",
+      "data": {
+        "description": "one",
+        "location": "",
+        "date": "2019-12-09T06:44:08.000Z",
+        "members": [
+          "jen"
+        ]
       }
-    ]
+    },
+    "jen-two": {
+      "host": "jen",
+      "eventName": "two",
+      "data": {
+        "description": "two",
+        "location": "",
+        "date": "2019-12-09T06:44:08.000Z",
+        "members": [
+          "jen"
+        ]
+      }
+    },
+    "jen-try": {
+      "host": "jen",
+      "eventName": "try",
+      "data": {
+        "description": "try",
+        "location": "",
+        "date": "2019-12-09T02:35:22.982Z",
+        "members": [
+          "jen"
+        ]
+      }
+    },
+    "jen-hey": {
+      "host": "jen",
+      "eventName": "hey",
+      "data": {
+        "description": "now",
+        "location": "",
+        "date": "2019-12-09T03:46:31.975Z",
+        "members": [
+          "jen"
+        ]
+      }
+    }
   }
 }
