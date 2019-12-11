@@ -9,7 +9,8 @@ export const prefix = '/public';
 const {publicStore} = require('../data/DataStore');
 
 
-router.get('/*', parseGet, function (req, res) {
+//gets actual events and all their children
+router.get('/events', parseGet, function (req, res) {
   const result = req.handleGet(publicStore);
   if (typeof result !== 'undefined') {
     res.send({result})
@@ -60,9 +61,16 @@ router.post('/create', parsePost, function (req, res) {
 
 });
 
-router.delete('/*', parseDelete, function (req, res) {
+router.delete('/:eventName', parseDelete, function (req, res) {
+  /*
   const result = req.handleDelete(publicStore);
   if (typeof result !== 'undefined') {
     res.send({result})
   }
+  */
+
+  const {eventName} = req.params;
+  publicStore.del(`events.${eventName}`);
+  res.send({status: `'${eventName}' deleted.`});
+
 });

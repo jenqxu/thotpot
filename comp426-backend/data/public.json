@@ -1,22 +1,9 @@
 {
   "create": {
-    "description": "THOTPOT",
-    "location": "",
-    "date": "2019-12-18T22:00:00.000Z",
-    "members": [
-      "king"
-    ]
+    "description": "post",
+    "date": "2019-12-11T18:22:42.926Z"
   },
   "events": {
-    "yu": {
-      "eventName": "pls",
-      "data": {
-        "description": "pls",
-        "location": "",
-        "date": "2019-12-07T04:36:40.112Z",
-        "members": []
-      }
-    },
     "aylin": {
       "eventName": "la",
       "data": {
@@ -24,21 +11,6 @@
         "location": "",
         "date": "2019-12-15T04:51:01.000Z",
         "members": []
-      }
-    },
-    "xu": {
-      "hostEvents": {
-        "eventName": "xu",
-        "data": {
-          "description": "xu",
-          "location": "",
-          "date": "2019-12-07T05:15:48.940Z",
-          "members": [
-            "aylin",
-            "aylin",
-            "xu"
-          ]
-        }
       }
     },
     "jen": {
@@ -59,7 +31,7 @@
       "data": {
         "description": "one",
         "location": "",
-        "date": "2019-12-09T06:44:08.000Z",
+        "date": "2019-12-09T04:22:48.709Z",
         "members": [
           "jen"
         ]
@@ -71,31 +43,31 @@
       "data": {
         "description": "two",
         "location": "",
-        "date": "2019-12-09T06:44:08.000Z",
+        "date": "2019-12-09T04:22:48.709Z",
         "members": [
           "jen"
         ]
       }
     },
-    "jen-try": {
+    "jen-?": {
       "host": "jen",
-      "eventName": "try",
+      "eventName": "?",
       "data": {
-        "description": "try",
+        "description": "we",
         "location": "",
-        "date": "2019-12-09T02:35:22.982Z",
+        "date": "2019-12-09T04:20:26.810Z",
         "members": [
           "jen"
         ]
       }
     },
-    "jen-hey": {
+    "jen-lala": {
       "host": "jen",
-      "eventName": "hey",
+      "eventName": "lala",
       "data": {
-        "description": "now",
+        "description": "pls",
         "location": "",
-        "date": "2019-12-09T03:46:31.975Z",
+        "date": "2019-12-11T17:57:39.891Z",
         "members": [
           "jen"
         ]
