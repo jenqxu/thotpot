@@ -3,7 +3,7 @@ i.Nav {
     border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
     position: fixed;
     top: 0;
-    width: 100%;
+    /* width: 100%; */
     z-index: 2;
     -webkit-transition: height 0.2s ease-in-out;
     transition: height 0.2s ease-in-out;
@@ -13,7 +13,7 @@ i.Nav {
     display: flex;
     flex-direction: row;
     height: 50px;
-    width: 70%;
+    /* width: 70%; */
     margin: 0 auto;
     padding: 26px 40px;
   }

@@ -43,7 +43,7 @@ class EventFeed extends Component {
        axios.get('http://localhost:9000/private/events', {
         'headers': {Authorization: `Bearer ${authtoken}`}
         }).then(res => {
-           //alert('Got events - private');
+           alert('Got events - private');
        }).catch(error => {alert(error)});
    }
 
@@ -56,7 +56,7 @@ class EventFeed extends Component {
    render() {
        return(
        <div className="Feed">
-           <div className="testget" style={{float: 'right'}}>
+           <div className="testget" >
 
            <Button
               variant='outline-dark'
@@ -68,16 +68,7 @@ class EventFeed extends Component {
 
         </div>
 
-        <div className="testDeletepost">
-            <Button
-            variant='outline-dark'
-            className = "button-event"
-            onClick={this.handleDeletePost}
-            
-            >
-            test - delete post
-            </Button>     
-        </div>
+        
 
    </div>
    )}

@@ -113,11 +113,19 @@
         "email": "la@gmail.com"
       }
     },
+<<<<<<< HEAD
     "jen": {
       "passwordHash": "$2b$10$3qihwm36lZWKaSB1Q1o26eB7qyJmg0f5MLRDBHOBEj8hTIky8gwD.",
       "data": {
         "last": "jen",
         "email": "jen@gmail.com"
+=======
+    "king": {
+      "passwordHash": "$2b$10$8nLFv9tUnZvK.blgZSXkoOHDcDNe3vfozdRuXPGI7jr3JmqRXgiei",
+      "data": {
+        "last": "Poop",
+        "email": "poop@gmail.com"
+>>>>>>> e02632ba32a114437e5952571b4cc9033e54de72
       }
     }
   }

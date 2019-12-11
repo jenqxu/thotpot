@@ -27,5 +27,12 @@
         }
       }
     ]
+  },
+  "king": {
+    "event": [
+      {
+        "eventName": "for thots only"
+      }
+    ]
   }
 }

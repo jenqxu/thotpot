@@ -1,51 +1,75 @@
-import React, { Component } from "react";
-import './Post.css'
-import {Button} from 'react-bootstrap';
+import React, { Component } from 'react';
+import Moment from "moment";
+import { Button, Card, Accordion, AccordionToggle, AccordionCollapse, Container, Row, Col } from 'react-bootstrap';
+import './Post.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import calLogo from './calendar-logo.jpg'
-import locLogo from './location-logo.jpg'
-import memLogo from './members-logo.png'
-import axios from "axios"
+import one from './icons/1.svg';
+import two from './icons/2.svg';
+import three from './icons/3.svg';
+import four from './icons/4.svg';
+import five from './icons/5.svg';
+import members from './members-logo.png';
+import calendar from './calendar-logo.jpg';
 
+class Post extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-//Renders a post
-//create Feed to render a post for available posts
-class Post extends Component{
-    constructor(props){
-        super(props);
+  randomIcon() {
+    let icons = [one, two, three, four, five];
+    return icons[(Math.floor(Math.random() * icons.length))];
+  }
 
-        
-    }
+  handleJoin() {
+    
+  }
 
-    render(){
-        return(
-            <div className = "Post">
+  render() {
+    // const name = this.props.name;
+    // const description = this.props.description;
+    // const membersGoing = this.props.membersGoing;
+    // const date = this.props.date;
 
+    const name = 'Neckbeard Hotpot';
+    const description = 'hotpot but with bathwater from cute girls';
+    const membersGoing = 56;
+    const date = new Date(2019, 11, 11);
 
-                <p className="Event">
-                    <img className="Avatar" src="https://www.misstamchiak.com/wp-content/uploads/2018/11/P1120837-12-e1542903288155.jpg" alt="Avatar">
-                    </img>
-                </p>
-
-                <div className="event-name">
-                    <span>Christmas hot pot </span>
-                </div>
-
-                <div className="description">
-                    <div className="describers">
-                        <p><img className="calendar-logo" src={calLogo} alt="calendar" ></img> December 25</p>
-                        <p><img className="location-logo" src={locLogo} alt="location" ></img> 2 miles away</p>
-                        <p><img className="members-logo" src={memLogo} alt="members" ></img> 3 members</p>
-                    </div>
-                </div>
-
-                <div className="Post-join">
-                    <Button className='Post-join-button' variant='outline-dark' onClick={this.hasChanged}>Join</Button>
-                </div>
-            </div>
-        );
-        
-    }
+    return (
+      <Accordion>
+        <Card style={{ width: '18rem' }}>
+          <AccordionToggle as={Button} variant='link' eventKey='0'>
+            <Card.Header><Card.Title
+              style={{
+                fontSize: 18,
+              }}>
+              {name}</Card.Title></Card.Header>
+            <Card.Img variant='top' src={this.randomIcon()} className='icon' />
+          </AccordionToggle>
+          <AccordionCollapse eventKey='0'>
+            <Card.Body>
+              <Card.Text>{description}</Card.Text>
+              <p><img src={calendar} className='calendar-logo' /> {Moment(date).calendar()}</p>
+            </Card.Body>
+          </AccordionCollapse>
+          <Card.Footer>
+            <Container>
+              <Row>
+                <Col><p
+                  style={{
+                    position: 'absolute', left: '50%', top: '50%',
+                    transform: 'translate(-50%, -50%)'
+                  }}>
+                  <img src={members} className='members-logo' /> {membersGoing}</p></Col>
+                <Col><Button className='joinButton' variant='outline-warning'>Join</Button></Col>
+              </Row>
+            </Container>
+          </Card.Footer>
+        </Card>
+      </Accordion>
+    );
+  }
 }
 
 export default Post;
