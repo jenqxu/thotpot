@@ -120,7 +120,6 @@ class Header extends Component {
       });
 
     this.handleClose(); 
-  
   }
 
   handleDeleteAccount = event =>{
@@ -128,10 +127,9 @@ class Header extends Component {
     const name = this.state.name;
     let authtoken = localStorage.getItem("JWT");
     
-    //axios.delete(`http://localhost:9000/account/${name}`).then(res => {alert('Account deleted')}).catch(error => alert('think not deleting account'));
+    axios.delete(`http://localhost:9000/account/${name}`).then(res => {alert('Account deleted')}).catch(error => alert('think not deleting account'));
     axios.delete(`http://localhost:9000/user/${name}`,
     {'headers': {Authorization: `Bearer ${authtoken}`}}).then(res => {
-      
       alert('User deleted');
       if (authtoken === null){
         alert("You are not logged in");
@@ -139,7 +137,6 @@ class Header extends Component {
         alert("Deleting account");
         localStorage.removeItem("JWT");
       }
-      
     }).catch(error => alert('think not deleting user'));
 
    

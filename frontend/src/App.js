@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header'
 import Post from './components/Post'
 import HPEvent from './components/HPEvent'
+import EventFeed from './components/EventFeed'
 
 class App extends Component {
   // constructor(props) {
@@ -45,6 +46,7 @@ class App extends Component {
         <Header/>
         <Post />
         <HPEvent />
+        <EventFeed />
       </div>
       
     );

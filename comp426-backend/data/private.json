@@ -1,2 +1,44 @@
 {
+  "create": {
+    "description": "post",
+    "date": "2019-12-11T18:22:42.926Z",
+    "members": [
+      "jen"
+    ]
+  },
+  "events": {
+    "jen-try": {
+      "host": "jen",
+      "eventName": "try",
+      "data": {
+        "description": "again",
+        "date": "2019-12-11T18:17:54.504Z",
+        "members": [
+          "jen"
+        ]
+      }
+    },
+    "jen-hi": {
+      "host": "jen",
+      "eventName": "hi",
+      "data": {
+        "description": "welp",
+        "date": "2019-12-11T18:17:54.504Z",
+        "members": [
+          "jen"
+        ]
+      }
+    },
+    "jen-all": {
+      "host": "jen",
+      "eventName": "all",
+      "data": {
+        "description": "post",
+        "date": "2019-12-11T18:22:42.926Z",
+        "members": [
+          "jen"
+        ]
+      }
+    }
+  }
 }

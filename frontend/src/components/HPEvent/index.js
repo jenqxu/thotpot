@@ -70,25 +70,45 @@ class HPEvent extends Component {
                     'eventName': eventName,
                     'data': {
                         'description':description,
-                        'location': location,
                         'date': date,
-                        'members': members
                     },
                 }).then(res => {
                     alert('Event created');
                 }).catch(error => {
                     alert("i think create-event didn't work");
                     });
+        
+
+            //add the event to Private data storage
+            axios.post(`http://localhost:9000/private/create/`,{
+                    'host':host,
+                    'eventName': eventName,
+                    'data': {
+                        'description':description,
+                        'date': date,
+                        'members': members }
+                    },
+                    {'headers': {Authorization: `Bearer ${authtoken}`}, 
+                }).then(res => {
+                    //alert('Event created - private');
+                }).catch(error => {
+                    alert("i think create-event didn't work - private");
+                    });        
             
 
             //add the event to the User data storage
            axios.post(`http://localhost:9000/user/event`, {
                 'data':[{
                     'eventName': this.state.eventName,
+                    'data': {
+                        'description':description,
+                        'date': date,
+                        'members': members }
                 }], 'type':'merge'},
                 {'headers': {Authorization: `Bearer ${authtoken}`}
             }).then(res => {//alert("i think user post worked")
             }).catch(error => {alert("i think user post didn't work")});
+            
 
         }).catch(error => {
             alert("i think not");

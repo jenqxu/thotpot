@@ -1,22 +1,9 @@
 {
   "create": {
-    "description": "two",
-    "location": "",
-    "date": "2019-12-09T04:22:48.709Z",
-    "members": [
-      "jen"
-    ]
+    "description": "post",
+    "date": "2019-12-11T18:22:42.926Z"
   },
   "events": {
-    "yu": {
-      "eventName": "pls",
-      "data": {
-        "description": "pls",
-        "location": "",
-        "date": "2019-12-07T04:36:40.112Z",
-        "members": []
-      }
-    },
     "aylin": {
       "eventName": "la",
       "data": {
@@ -24,21 +11,6 @@
         "location": "",
         "date": "2019-12-15T04:51:01.000Z",
         "members": []
-      }
-    },
-    "xu": {
-      "hostEvents": {
-        "eventName": "xu",
-        "data": {
-          "description": "xu",
-          "location": "",
-          "date": "2019-12-07T05:15:48.940Z",
-          "members": [
-            "aylin",
-            "aylin",
-            "xu"
-          ]
-        }
       }
     },
     "jen": {
@@ -77,30 +49,6 @@
         ]
       }
     },
-    "jen-try": {
-      "host": "jen",
-      "eventName": "try",
-      "data": {
-        "description": "try",
-        "location": "",
-        "date": "2019-12-09T02:35:22.982Z",
-        "members": [
-          "jen"
-        ]
-      }
-    },
-    "jen-hey": {
-      "host": "jen",
-      "eventName": "hey",
-      "data": {
-        "description": "now",
-        "location": "",
-        "date": "2019-12-09T03:46:31.975Z",
-        "members": [
-          "jen"
-        ]
-      }
-    },
     "jen-?": {
       "host": "jen",
       "eventName": "?",
@@ -111,6 +59,35 @@
         "members": [
           "jen"
         ]
+      }
+    },
+    "jen-lala": {
+      "host": "jen",
+      "eventName": "lala",
+      "data": {
+        "description": "pls",
+        "location": "",
+        "date": "2019-12-11T17:57:39.891Z",
+        "members": [
+          "jen"
+        ]
+      }
+    },
+    "jen-test": {
+      "host": "jen",
+      "eventName": "test",
+      "data": {
+        "description": "public",
+        "location": "",
+        "date": "2019-12-11T17:59:36.354Z"
+      }
+    },
+    "jen-all": {
+      "host": "jen",
+      "eventName": "all",
+      "data": {
+        "description": "post",
+        "date": "2019-12-11T18:22:42.926Z"
       }
     }
   }

@@ -41,7 +41,6 @@ router.post('/*', parsePost, function (req, res) {
   if (typeof result !== 'undefined') {
     res.send({result})
   }
-
 });
 
 /**
