@@ -1,16 +1,7 @@
 {
   "create": {
-<<<<<<< HEAD
     "description": "post",
     "date": "2019-12-11T18:22:42.926Z"
-=======
-    "description": "THOTPOT",
-    "location": "",
-    "date": "2019-12-18T22:00:00.000Z",
-    "members": [
-      "king"
-    ]
->>>>>>> e02632ba32a114437e5952571b4cc9033e54de72
   },
   "events": {
     "aylin": {
@@ -82,23 +73,6 @@
         ]
       }
     },
-<<<<<<< HEAD
-    "jen-test": {
-      "host": "jen",
-      "eventName": "test",
-      "data": {
-        "description": "public",
-        "location": "",
-        "date": "2019-12-11T17:59:36.354Z"
-      }
-    },
-    "jen-all": {
-      "host": "jen",
-      "eventName": "all",
-      "data": {
-        "description": "post",
-        "date": "2019-12-11T18:22:42.926Z"
-=======
     "king-for thots only": {
       "host": "king",
       "eventName": "for thots only",
@@ -109,7 +83,6 @@
         "members": [
           "king"
         ]
->>>>>>> e02632ba32a114437e5952571b4cc9033e54de72
       }
     }
   }

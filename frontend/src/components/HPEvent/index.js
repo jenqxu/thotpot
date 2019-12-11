@@ -147,9 +147,9 @@ class HPEvent extends Component {
     render(){
         return(
             <nav className='Nav'>
-                <div className='Nav-menus'>
+                <div className='Nav-menus' style={{justifyContent:'flex-end'}}>
                     <Button
-                    variant='outline-dark'
+                    variant='warning'
                     className = "button-event"
                     onClick={()=> this.handleCreateShow('modal1')}
                     >

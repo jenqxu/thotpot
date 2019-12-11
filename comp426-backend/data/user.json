@@ -1,33 +1,4 @@
 {
-  "jen": {
-    "event": [
-      {
-        "eventName": "lala"
-      },
-      {
-        "eventName": "test"
-      },
-      {
-        "eventName": "why"
-      },
-      {
-        "eventName": "will "
-      },
-      {
-        "eventName": "try"
-      },
-      {
-        "eventName": "all",
-        "data": {
-          "description": "post",
-          "date": "2019-12-11T18:22:42.926Z",
-          "members": [
-            "jen"
-          ]
-        }
-      }
-    ]
-  },
   "king": {
     "event": [
       {
