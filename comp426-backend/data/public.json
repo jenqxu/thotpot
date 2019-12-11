@@ -1,9 +1,11 @@
 {
   "create": {
-    "description": "pls",
+    "description": "THOTPOT",
     "location": "",
-    "date": "2019-12-07T04:36:40.112Z",
-    "members": []
+    "date": "2019-12-18T22:00:00.000Z",
+    "members": [
+      "king"
+    ]
   },
   "events": {
     "yu": {
@@ -96,6 +98,18 @@
         "date": "2019-12-09T03:46:31.975Z",
         "members": [
           "jen"
+        ]
+      }
+    },
+    "king-for thots only": {
+      "host": "king",
+      "eventName": "for thots only",
+      "data": {
+        "description": "THOTPOT",
+        "location": "",
+        "date": "2019-12-18T22:00:00.000Z",
+        "members": [
+          "king"
         ]
       }
     }

@@ -119,6 +119,13 @@
         "last": "la",
         "email": "la@gmail.com"
       }
+    },
+    "king": {
+      "passwordHash": "$2b$10$8nLFv9tUnZvK.blgZSXkoOHDcDNe3vfozdRuXPGI7jr3JmqRXgiei",
+      "data": {
+        "last": "Poop",
+        "email": "poop@gmail.com"
+      }
     }
   }
 }
