@@ -48,7 +48,7 @@ class Header extends Component {
           'email': email,
         },
        }).then(res => {
-        alert('i think - account created');
+        alert('Account created');
       }).catch(error => {
         alert("i think not - account couldn't be created");
         });
@@ -114,27 +114,32 @@ class Header extends Component {
       localStorage.setItem("JWT", authtoken);
       //localStorage.removeItem('myCat');
       //var cat = localStorage.getItem('myCat');
-      alert("logged in");
+      alert("Logged in");
     }).catch(error => {
       alert("i think not");
       });
 
     this.handleClose(); 
-  
   }
 
-  handleDelete = event =>{
+  handleDeleteAccount = event =>{
     event.preventDefault();
     const name = this.state.name;
     let authtoken = localStorage.getItem("JWT");
-    if (authtoken === null){
-      alert("You are not logged in");
-    } else {
-      alert("Deleting account");
-      localStorage.removeItem("JWT");
-    }
+    
     axios.delete(`http://localhost:9000/account/${name}`).then(res => {alert('Account deleted')}).catch(error => alert('think not deleting account'));
+    axios.delete(`http://localhost:9000/user/${name}`,
+    {'headers': {Authorization: `Bearer ${authtoken}`}}).then(res => {
+      alert('User deleted');
+      if (authtoken === null){
+        alert("You are not logged in");
+      } else {
+        alert("Deleting account");
+        localStorage.removeItem("JWT");
+      }
+    }).catch(error => alert('think not deleting user'));
 
+   
   }
 
   //Essentially a test for /account/status
@@ -268,7 +273,7 @@ class Header extends Component {
 
                 <Button
                   variant='outline-dark'
-                  onClick={this.handleDelete}
+                  onClick={this.handleDeleteAccount}
                 >
                   Delete account
                 </Button>

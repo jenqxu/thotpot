@@ -15,18 +15,46 @@ const {privateStore} = require('../data/DataStore');
  */
 router.use(authenticateUser);
 
-router.get('/*', parseGet, function (req, res) {
+router.get('/events', parseGet, function (req, res) {
   const result = req.handleGet(privateStore);
   if (typeof result !== 'undefined') {
     res.send({result})
   }
 });
 
-router.post('/*', parsePost, function (req, res) {
+router.post('/create', parsePost, function (req, res) {
+  
+  /*
   const result = req.handlePost(privateStore);
   if (typeof result !== 'undefined') {
     res.send({result})
   }
+  */
+
+  
+  const result = req.handlePost(privateStore);
+
+  if (!req.body.host || !req.body.eventName) {
+  res.status(401).send({msg: 'Expected a payload of host name and event name.'});
+  return;
+  }
+
+  const host = req.body.host.toLowerCase();
+  const eventName = req.body.eventName.toLowerCase();
+
+  //Create or add unique events to a host
+  privateStore.set(`events.${host}-${eventName}`,
+    {
+    host: req.body.host,
+    eventName: req.body.eventName,
+    data: req.body.data,
+    }
+  );
+
+  //res.send({data: userFilter(accountStore.get(`users.${name}`)), status: 'Successfully made account'});
+  res.send({result});  
+    
+
 });
 
 router.delete('/*', parseDelete, function (req, res) {
