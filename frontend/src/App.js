@@ -12,7 +12,6 @@ class App extends Component {
       <div className="App">
         <Header />
         <br/>
-        <br/>
         <PostFeed/>
 
         <HPEvent />
