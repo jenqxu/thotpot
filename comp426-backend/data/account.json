@@ -1,12 +1,5 @@
 {
   "users": {
-    "jen": {
-      "passwordHash": "$2b$10$cBblnjoL0h244rOn5yfSveoZ90of78kalUBZrTQkxue4EISiyg0f2",
-      "data": {
-        "last": "jen",
-        "email": "jen@gmail.com"
-      }
-    },
     "pls": {
       "passwordHash": "$2b$10$Q.nUE.YiwwcNWAbuaxtLVO07J/Dv4KizHkzJBn9MkJ4B90Pafqxwi",
       "data": {
@@ -28,8 +21,15 @@
         "email": "yay@gmail.com"
       }
     },
+    "mar": {
+      "passwordHash": "$2b$10$NH/ycXLxym.z.Wv65JHJ3uh8QBizXewXo3bhUAVJwX2CDoc5pD132",
+      "data": {
+        "last": "mar",
+        "email": "mar@gmail.com"
+      }
+    },
     "jennifer": {
-      "passwordHash": "$2b$10$rOdvu9WlWzEaWb5uM4p/aONg9QKOSp30crW5uD5SfkcqijbD/I4ju",
+      "passwordHash": "$2b$10$8r38KpHwyDSPWgm1RSKBd.ZiiDCo2lySIS2ZdW7zl8jbJ8.b9rC.C",
       "data": {
         "last": "",
         "email": ""

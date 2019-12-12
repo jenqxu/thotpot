@@ -65,9 +65,15 @@ router.post('/create', parsePost, function (req, res) {
 
 });
 
-router.delete('/*', parseDelete, function (req, res) {
+router.delete('/:eventName', parseDelete, function (req, res) {
+  /*
   const result = req.handleDelete(privateStore);
   if (typeof result !== 'undefined') {
     res.send({result})
   }
+  */
+
+  const {eventName} = req.params;
+  privateStore.del(`events.${eventName}`);
+  res.send({status: `'${eventName}' deleted.`});
 });

@@ -6,40 +6,6 @@
       }
     ]
   },
-  "jen": {
-    "event": [
-      {
-        "eventName": "Neckbear Hotpot",
-        "data": {
-          "description": "poo",
-          "date": "2019-12-11T22:05:42.773Z",
-          "members": [
-            "jen"
-          ]
-        }
-      },
-      {
-        "eventName": "Neckbeard Hotpot",
-        "data": {
-          "description": "pls",
-          "date": "2019-12-11T22:05:42.773Z",
-          "members": [
-            "jen"
-          ]
-        }
-      },
-      {
-        "eventName": "Neckbeard Hotpot",
-        "data": {
-          "description": "pls",
-          "date": "2019-12-11T22:29:09.859Z",
-          "members": [
-            "jen"
-          ]
-        }
-      }
-    ]
-  },
   "yay": {
     "event": [
       {
@@ -49,6 +15,20 @@
           "date": "2019-12-12T02:01:39.841Z",
           "members": [
             "yay"
+          ]
+        }
+      }
+    ]
+  },
+  "mar": {
+    "event": [
+      {
+        "eventName": "seaa",
+        "data": {
+          "description": "sea",
+          "date": "2019-12-12T05:37:03.820Z",
+          "members": [
+            "mar"
           ]
         }
       }

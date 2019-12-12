@@ -3,7 +3,9 @@
     "description": "pls",
     "date": "2019-12-11T22:29:09.859Z",
     "members": [
-      "jen"
+      "jen",
+      "mar",
+      "jennifer"
     ]
   },
   "events": {
@@ -58,18 +60,20 @@
         "description": "pls",
         "date": "2019-12-11T22:29:09.859Z",
         "members": [
-          "jen"
+          "jen",
+          "mar",
+          "jennifer"
         ]
       }
     },
-    "yay-google": {
-      "host": "yay",
-      "eventName": "google",
+    "jennifer-sleepy ": {
+      "host": "jennifer",
+      "eventName": "sleepy ",
       "data": {
-        "description": "event",
-        "date": "2019-12-12T02:01:39.841Z",
+        "description": "time",
+        "date": "2019-12-12T05:18:29.054Z",
         "members": [
-          "yay"
+          "jennifer"
         ]
       }
     }
