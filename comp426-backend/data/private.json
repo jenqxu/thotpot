@@ -1,11 +1,9 @@
 {
   "create": {
-    "description": "awerwaera",
-    "date": "2020-01-01T03:30:00.000Z",
+    "description": "please work",
+    "date": "2019-12-27T06:00:58.000Z",
     "members": [
-      "jen",
-      "mar",
-      "jennifer"
+      "mar"
     ]
   },
   "events": {
@@ -50,6 +48,17 @@
         "date": "2020-01-01T03:30:00.000Z",
         "members": [
           "jen"
+        ]
+      }
+    },
+    "mar-bruh": {
+      "host": "mar",
+      "eventName": "bruh",
+      "data": {
+        "description": "please work",
+        "date": "2019-12-27T06:00:58.000Z",
+        "members": [
+          "mar"
         ]
       }
     }

@@ -42,5 +42,19 @@
         }
       }
     ]
+  },
+  "mar": {
+    "event": [
+      {
+        "eventName": "bruh",
+        "data": {
+          "description": "please work",
+          "date": "2019-12-27T06:00:58.000Z",
+          "members": [
+            "mar"
+          ]
+        }
+      }
+    ]
   }
 }
