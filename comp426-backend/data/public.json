@@ -1,7 +1,7 @@
 {
   "create": {
-    "description": "post",
-    "date": "2019-12-11T18:22:42.926Z"
+    "description": "event",
+    "date": "2019-12-12T02:01:39.841Z"
   },
   "events": {
     "aylin": {
@@ -83,6 +83,38 @@
         "members": [
           "king"
         ]
+      }
+    },
+    "jen-neckbear hotpot": {
+      "host": "jen",
+      "eventName": "Neckbear Hotpot",
+      "data": {
+        "description": "poo",
+        "date": "2019-12-11T22:05:42.773Z"
+      }
+    },
+    "jen-neckbeard%20hotpot": {
+      "host": "jen",
+      "eventName": "Neckbeard Hotpot",
+      "data": {
+        "description": "pls",
+        "date": "2019-12-11T22:05:42.773Z"
+      }
+    },
+    "jen-neckbeard hotpot": {
+      "host": "jen",
+      "eventName": "Neckbeard Hotpot",
+      "data": {
+        "description": "pls",
+        "date": "2019-12-11T22:29:09.859Z"
+      }
+    },
+    "yay-google": {
+      "host": "yay",
+      "eventName": "google",
+      "data": {
+        "description": "event",
+        "date": "2019-12-12T02:01:39.841Z"
       }
     }
   }
