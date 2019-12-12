@@ -1,28 +1,11 @@
 {
-  "king": {
-    "event": [
-      {
-        "eventName": "for thots only"
-      }
-    ]
-  },
   "jen": {
     "event": [
       {
-        "eventName": "bruh",
+        "eventName": "ummm",
         "data": {
-          "description": "tofu",
-          "date": "2019-12-22T02:00:00.000Z",
-          "members": [
-            "jen"
-          ]
-        }
-      },
-      {
-        "eventName": "big farts",
-        "data": {
-          "description": "a hotpot of sharts",
-          "date": "2019-12-23T04:02:40.000Z",
+          "description": "uughghughguh",
+          "date": "2020-01-01T03:30:00.000Z",
           "members": [
             "jen"
           ]

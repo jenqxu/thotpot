@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { CardDeck, Dropdown } from 'react-bootstrap';
+import { CardDeck } from 'react-bootstrap';
 import './PostFeed.css'
 import Post from '../Post';
-
 import axios from 'axios';
-import { Button } from 'react-bootstrap';
 
 
 class PostFeed extends Component {
@@ -28,23 +26,9 @@ class PostFeed extends Component {
 
       let pubPosts = [];
       for (let [key, value] of Object.entries(res.data.result)) {
-        // let host = key;
-        // let description = value['data']['description'];
-        // let eventName = value['eventName'];
-        // let date = value['data']['date'];
-
         pubPosts.push(value);
       }
       this.setState({posts: pubPosts});
-
-      /* //sorts alphabetically by host name
-      for (let key in res.data.result) {
-          let event = res.data.result[`${key}`];
-          let host = event['host'];
-          let eventName = event['eventName'];
-          let date = event['data']['date'];
-      }
-      */
 
     }).catch(error => { alert(error) });
 

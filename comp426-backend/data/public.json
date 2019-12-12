@@ -1,104 +1,15 @@
 {
   "create": {
-    "description": "a hotpot of sharts",
-    "date": "2019-12-23T04:02:40.000Z"
+    "description": "uughghughguh",
+    "date": "2020-01-01T03:30:00.000Z"
   },
   "events": {
-    "aylin": {
-      "eventName": "la",
-      "data": {
-        "description": "la",
-        "location": "",
-        "date": "2019-12-15T04:51:01.000Z",
-        "members": []
-      }
-    },
-    "jen": {
-      "eventName": "two",
-      "data": {
-        "description": "two",
-        "location": "",
-        "date": "2019-12-09T06:44:08.000Z",
-        "members": [
-          "jen"
-        ]
-      },
-      "date": "2019-12-09T06:44:08.000Z"
-    },
-    "jen-one": {
+    "jen-ummm": {
       "host": "jen",
-      "eventName": "one",
+      "eventName": "ummm",
       "data": {
-        "description": "one",
-        "location": "",
-        "date": "2019-12-09T04:22:48.709Z",
-        "members": [
-          "jen"
-        ]
-      }
-    },
-    "jen-two": {
-      "host": "jen",
-      "eventName": "two",
-      "data": {
-        "description": "two",
-        "location": "",
-        "date": "2019-12-09T04:22:48.709Z",
-        "members": [
-          "jen"
-        ]
-      }
-    },
-    "jen-?": {
-      "host": "jen",
-      "eventName": "?",
-      "data": {
-        "description": "we",
-        "location": "",
-        "date": "2019-12-09T04:20:26.810Z",
-        "members": [
-          "jen"
-        ]
-      }
-    },
-    "jen-lala": {
-      "host": "jen",
-      "eventName": "lala",
-      "data": {
-        "description": "pls",
-        "location": "",
-        "date": "2019-12-11T17:57:39.891Z",
-        "members": [
-          "jen"
-        ]
-      }
-    },
-    "king-for thots only": {
-      "host": "king",
-      "eventName": "for thots only",
-      "data": {
-        "description": "THOTPOT",
-        "location": "",
-        "date": "2019-12-18T22:00:00.000Z",
-        "members": [
-          "king"
-        ]
-      }
-    },
-    "jen-bruh": {
-      "host": "jen",
-      "eventName": "bruh",
-      "data": {
-        "description": "tofu",
-        "date": "2019-12-22T02:00:00.000Z"
-      }
-    },
-    "jen-big farts": {
-      "host": "jen",
-      "eventName": "big farts",
-      "data": {
-        "description": "a hotpot of sharts",
-        "date": "2019-12-23T04:02:40.000Z"
+        "description": "uughghughguh",
+        "date": "2020-01-01T03:30:00.000Z"
       }
     }
   }

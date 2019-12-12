@@ -17,6 +17,16 @@ router.get('/events', parseGet, function (req, res) {
   }
 });
 
+router.get('/:eventName', parseGet, function (req, res) {
+  
+  const result = req.handleGet(publicStore);
+  if (typeof result !== 'undefined') {
+    res.send({result});
+  }
+  
+
+});
+
 /**
  * given host and event name and data
  */
@@ -45,7 +55,8 @@ router.post('/create', parsePost, function (req, res) {
   }
 
   const host = req.body.host.toLowerCase();
-  const eventName = req.body.eventName.toLowerCase();
+  let eventName = req.body.eventName.toLowerCase();
+  //eventName = encodeURIComponent(eventName.trim());
 
   //Create or add unique events to a host
   publicStore.set(`events.${host}-${eventName}`,

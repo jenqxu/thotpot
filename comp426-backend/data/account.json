@@ -6,6 +6,34 @@
         "last": "jen",
         "email": "jen@gmail.com"
       }
+    },
+    "pls": {
+      "passwordHash": "$2b$10$Q.nUE.YiwwcNWAbuaxtLVO07J/Dv4KizHkzJBn9MkJ4B90Pafqxwi",
+      "data": {
+        "last": "pls",
+        "email": "pls@gmail.com"
+      }
+    },
+    "help": {
+      "passwordHash": "$2b$10$IGNlw0Fc3xW3GGPoLUwWa.gGw.L0UWfOJKPzuSSndhtdbDDRJLj/K",
+      "data": {
+        "last": "help",
+        "email": "help@gmail.com"
+      }
+    },
+    "yay": {
+      "passwordHash": "$2b$10$6E02naV.sIazDRIRQhDIk.yGKRAEQWRWQig80/7R11AkOx8/tPlh2",
+      "data": {
+        "last": "yay",
+        "email": "yay@gmail.com"
+      }
+    },
+    "jennifer": {
+      "passwordHash": "$2b$10$rOdvu9WlWzEaWb5uM4p/aONg9QKOSp30crW5uD5SfkcqijbD/I4ju",
+      "data": {
+        "last": "",
+        "email": ""
+      }
     }
   }
 }
