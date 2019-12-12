@@ -1,7 +1,5 @@
 {
   "create": {
-    "description": "awerwaera",
-    "date": "2020-01-01T03:30:00.000Z"
   },
   "events": {
     "jen-ummm": {
@@ -30,10 +28,7 @@
     },
     "jen-werweraw": {
       "host": "jen",
-      "eventName": "werweraw",
-      "data": {
-        "description": "awerwaera",
-        "date": "2020-01-01T03:30:00.000Z"
+
       }
     }
   }

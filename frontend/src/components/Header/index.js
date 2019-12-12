@@ -57,13 +57,13 @@ class Header extends Component {
   }
 
 
-  handleName = event => {
+  handleName = (event) => {
     event.preventDefault();
     this.setState({name: event.target.value});
   }
   
   
-  handlePass = event =>{
+  handlePass = (event) =>{
     event.preventDefault();
     this.setState({pass: event.target.value});
   }
@@ -130,27 +130,58 @@ class Header extends Component {
 
   handleDeleteAccount = event =>{
     event.preventDefault();
-    const name = this.state.name;
-    let authtoken = localStorage.getItem("JWT");
+    let name = this.state.name.toLowerCase();
+    let authtoken = localStorage.getItem("JWT");   
+    
     
     //delete from Account
-    axios.delete(`http://localhost:9000/account/${name}`).then(res => {alert('Account deleted')}).catch(error => alert('think not deleting account'));
+    axios.delete(`http://localhost:9000/account/${name}`).then(res => {alert('Account deleted')}).catch(error => alert('Deleting account not working'));
     
     //delete from User
     axios.delete(`http://localhost:9000/user/${name}`,
     {'headers': {Authorization: `Bearer ${authtoken}`}}).then(res => {
-      alert('User deleted');
+      //alert('User deleted');
       if (authtoken === null){
         alert("You are not logged in");
       } else {
         alert("Deleting account");
         localStorage.removeItem("JWT");
       }
-    }).catch(error => alert('think not deleting user'));
+    }).then(res=> {alert('Deleting User')}).catch(error => alert('Deleting User is not working'));
+
 
     //delete from Public
-    
-   
+    axios.get(`http://localhost:9000/public/events`).then(res => {
+        for (let[key, value] of Object.entries(res.data.result)){
+          let host = value['host'];
+          let eventName = value['eventName'];
+          let hostEvent = `${host}-${eventName}`;          
+
+          if (host === name){
+            alert("equal");
+            axios.delete(`http://localhost:9000/public/${hostEvent}`).then(res => {alert('Deleting public')}).catch(error => {alert('welp')});
+          }    
+        }
+      }).then(res=> {}).catch(error => {alert("Deleting Public isn't working")});
+
+    //delete from Private
+    axios.get('http://localhost:9000/private/events', {
+        'headers': {Authorization: `Bearer ${authtoken}`}
+        }).then(res => {
+        for (let[key, value] of Object.entries(res.data.result)){
+          let host = value['host'];
+          let eventName = value['eventName'];
+          let hostEvent = `${host}-${eventName}`;
+
+          if (host==name){
+            alert("equal");
+            axios.delete(`http://localhost:9000/private/${hostEvent}`,{
+              'headers': {Authorization: `Bearer ${authtoken}`}
+              }).then(res => {alert('Deleting private')}).catch(error => {alert('welp')});
+          }    
+        }
+      }).then(res=> {}).catch(error => {alert("Deleting Public isn't working")});
+
   }
 
   //Essentially a test for /account/status
@@ -176,6 +207,8 @@ class Header extends Component {
 
     const name = response.w3.ofa;
     const pass = 'default';
+
+    this.setState({name:name, pass:pass});
 
     axios.post('http://localhost:9000/account/create',
        {
@@ -208,6 +241,7 @@ class Header extends Component {
       return;
     }
 
+    this.setState({name:response.w3.ofa, pass:'default'});
 
     axios.post('http://localhost:9000/account/login',
     {
