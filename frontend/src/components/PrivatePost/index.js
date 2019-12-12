@@ -10,10 +10,9 @@ import four from './icons/4.svg';
 import five from './icons/5.svg';
 import members from './members-logo.png';
 import calendar from './calendar-logo.jpg';
-
 import axios from 'axios';
 
-class Post extends Component {
+class PrivatePost extends Component {
   constructor(props){
     super(props);
   }
@@ -136,4 +135,4 @@ class Post extends Component {
   }
 }
 
-export default Post;
+export default PrivatePost;
