@@ -20,7 +20,7 @@ class PostFeed extends Component {
         let authtoken = localStorage.getItem('JWT');
 
         //Get events from Public data store
-    axios.get('http://localhost:9000/public/events').then(res => {
+        axios.get('http://localhost:9000/public/events').then(res => {
         alert('Got events - public');
             //this keeps the order of events made (like twitter, most recent)
         for (let[key, value] of Object.entries(res.data.result)){
@@ -69,7 +69,7 @@ class PostFeed extends Component {
             </CardDeck>
 
 
-            <div>
+            {/* <div>
             <Button
               variant='outline-dark'
               className = "button-event"
@@ -77,8 +77,8 @@ class PostFeed extends Component {
               >
               test - feed
             </Button>         
-            </div>
-            
+            </div> */}
+
         </div>
       
     );

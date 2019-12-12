@@ -22,6 +22,14 @@ router.get('/events', parseGet, function (req, res) {
   }
 });
 
+router.get('/events/:event', parseGet, function (req, res) {
+  const result = req.handleGet(privateStore);
+  if (typeof result !== 'undefined') {
+    res.send({result})
+  }
+});
+
+
 router.post('/create', parsePost, function (req, res) {
   
   /*

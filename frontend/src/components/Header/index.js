@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Header.css';
 import Logo from './logoWithText.svg';
-import { Button, ButtonToolbar, ButtonGroup, Form, Modal } from 'react-bootstrap';
+import { Button, ButtonToolbar, ButtonGroup, Form, Modal, Alert } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import {GoogleLogin} from 'react-google-login';
 import axios from 'axios';
@@ -104,13 +104,19 @@ class Header extends Component {
     const pass = this.state.pass; 
     const name = this.state.name;
 
+    let authtoken = localStorage.getItem('JWT');
+    if (authtoken !== null) {
+      alert("You are already logged in");
+      return;
+    }
+
     axios.post('http://localhost:9000/account/login',
     {
       'name':name,
       'pass':pass
     }).then(res => {
       //alert(res.data.jwt);
-      let authtoken = res.data.jwt; 
+      authtoken = res.data.jwt; 
       localStorage.setItem("JWT", authtoken);
       //localStorage.removeItem('myCat');
       //var cat = localStorage.getItem('myCat');
@@ -127,7 +133,10 @@ class Header extends Component {
     const name = this.state.name;
     let authtoken = localStorage.getItem("JWT");
     
+    //delete from Account
     axios.delete(`http://localhost:9000/account/${name}`).then(res => {alert('Account deleted')}).catch(error => alert('think not deleting account'));
+    
+    //delete from User
     axios.delete(`http://localhost:9000/user/${name}`,
     {'headers': {Authorization: `Bearer ${authtoken}`}}).then(res => {
       alert('User deleted');
@@ -139,10 +148,13 @@ class Header extends Component {
       }
     }).catch(error => alert('think not deleting user'));
 
+    //delete from Public
+    
    
   }
 
   //Essentially a test for /account/status
+  /*
   componentDidMount(){
     let authtoken = localStorage.getItem('JWT');
     axios.get('http://localhost:9000/account/status', {
@@ -156,8 +168,67 @@ class Header extends Component {
       alert("You are not logged in");
       });
   }
+  */
+
+  responseGoogleSignup = (response) => {
+    //let authtoken = response.Zi.id_token;
+    //localStorage.setItem("JWT", authtoken);
+
+    const name = response.w3.ofa;
+    const pass = 'default';
+
+    axios.post('http://localhost:9000/account/create',
+       {
+        'name':name,
+        'pass': pass,
+        'data': {
+          'last':'',
+          'email': '',
+        },
+       }).then(res => {
+        alert('Signed up with Google!');
+      }).catch(error => {
+        alert("Name taken - please create new thotpot account");
+        });
+
+    this.handleClose(); 
+
+    
+  }
+
+  responseGoogleLogin = (response) => {
+    //authtoken = response.Zi.id_token;
+    //localStorage.setItem("JWT", authtoken);
+    //alert(authtoken);
+    //this.handleClose(); 
+
+    let authtoken = localStorage.getItem('JWT');
+    if (authtoken !== null) {
+      alert("You are already logged in");
+      return;
+    }
 
 
+    axios.post('http://localhost:9000/account/login',
+    {
+      'name':response.w3.ofa,
+      'pass':'default'
+    }).then(res => {
+      //alert(res.data.jwt);
+      authtoken = res.data.jwt; 
+      localStorage.setItem("JWT", authtoken);
+      //localStorage.removeItem('myCat');
+      //var cat = localStorage.getItem('myCat');
+      alert("Logged in");
+    }).catch(error => {
+      alert("logging in didn't work");
+      });
+  }
+
+  responseGoogleError = (response) => {
+    alert("Error using Google Login");
+  }
+ 
   render() {
     return (
       <nav className='Nav'>
@@ -212,11 +283,13 @@ class Header extends Component {
                       <Button variant="outline-dark" type="submit">
                         Submit
  				        	    </Button>
-                      <GoogleLogin
-                        clientId = '658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com'
-                        buttonText="Login"
-                        // onSuccess={responseGoogle}
-                        // onFailure={responseGoogle}
+
+
+                       <GoogleLogin
+                        clientId = '1048477882928-lnmaj1ufcbe89g8vin1ti7ghbl6le8r6.apps.googleusercontent.com'
+                        buttonText="Signup with Google"
+                        onSuccess={this.responseGoogleSignup}
+                        onFailure={this.responseGoogleError}
                         cookiePolicy={'single_host_origin'}
                       />
 
@@ -260,6 +333,16 @@ class Header extends Component {
                       <Button variant="outline-dark float-right" type="submit">
                         Submit
  				        	    </Button>
+
+
+                       <GoogleLogin
+                        clientId = '1048477882928-lnmaj1ufcbe89g8vin1ti7ghbl6le8r6.apps.googleusercontent.com'
+                        buttonText="Login with Google"
+                        onSuccess={this.responseGoogleLogin}
+                        onFailure={this.responseGoogleError}
+                        cookiePolicy={'single_host_origin'}
+                      />
+
                     </Form>
                   </Modal.Body>
                 </Modal>
