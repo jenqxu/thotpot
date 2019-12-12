@@ -22,19 +22,21 @@ class Post extends Component {
   }
 
   handleJoin() {
-    
+
   }
 
   render() {
-    // const name = this.props.name;
-    // const description = this.props.description;
-    // const membersGoing = this.props.membersGoing;
-    // const date = this.props.date;
+    const hostName = this.props.hostName;
+    const name = this.props.name;
+    const description = this.props.description;
+    const membersGoing = this.props.membersGoing;
+    const date = this.props.date;
 
-    const name = 'Neckbeard Hotpot';
-    const description = 'hotpot but with bathwater from cute girls';
-    const membersGoing = 56;
-    const date = new Date(2019, 11, 11);
+    // const hostName = 'Butt Boy';
+    // const name = 'Neckbeard Hotpot';
+    // const description = 'hotpot but with bathwater from cute girls';
+    // const membersGoing = 56;
+    // const date = new Date(2019, 11, 11);
 
     return (
       <Accordion>
@@ -49,6 +51,7 @@ class Post extends Component {
           </AccordionToggle>
           <AccordionCollapse eventKey='0'>
             <Card.Body>
+              <Card.Text className='text-muted'>Created by {hostName}</Card.Text>
               <Card.Text>{description}</Card.Text>
               <p><img src={calendar} className='calendar-logo' /> {Moment(date).calendar()}</p>
             </Card.Body>

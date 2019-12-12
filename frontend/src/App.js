@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header'
 import HPEvent from './components/HPEvent'
-import EventFeed from './components/EventFeed'
 import PostFeed from './components/PostFeed'
  
 class App extends Component {
