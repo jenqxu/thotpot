@@ -10,10 +10,9 @@ import four from './icons/4.svg';
 import five from './icons/5.svg';
 import members from './members-logo.png';
 import calendar from './calendar-logo.jpg';
-
 import axios from 'axios';
 
-class Post extends Component {
+class PrivatePost extends Component {
   constructor(props){
     super(props);
   }
@@ -89,23 +88,15 @@ class Post extends Component {
     }).catch(error => {
       alert("You are not logged in");
     });
-    
-
-
 
   }
 
   render() {
-    // const name = this.props.name;
-    // const description = this.props.description;
-    // const membersGoing = this.props.membersGoing;
-    // const date = this.props.date;
-
-    const host = "jen";
-    const name = 'Neckbeard Hotpot';
-    const description = 'hotpot but with bathwater from cute girls';
-    const membersGoing = 56;
-    const date = new Date(2019, 11, 11);
+    const host = this.props.hostName;
+    const name = this.props.name;
+    const description = this.props.description;
+    const membersGoing = this.props.membersGoing;
+    const date = this.props.date;
 
     return (
       <Accordion>
@@ -120,6 +111,7 @@ class Post extends Component {
           </AccordionToggle>
           <AccordionCollapse eventKey='0'>
             <Card.Body>
+              <Card.Text className='text-muted'>Created by {host}</Card.Text>
               <Card.Text>{description}</Card.Text>
               <p><img src={calendar} className='calendar-logo' /> {Moment(date).calendar()}</p>
             </Card.Body>
@@ -143,4 +135,4 @@ class Post extends Component {
   }
 }
 
-export default Post;
+export default PrivatePost;

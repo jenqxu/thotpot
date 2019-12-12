@@ -1,0 +1,34 @@
+.icon {
+  width: 250px;
+}
+
+.joinButton {
+  right: 0px;
+}
+
+.describers {
+    bottom: 8px;
+    left: 16px;
+    color: grey;
+  }
+
+.calendar-logo {
+    width: 25px;
+    height: auto;
+    opacity: 0.2;
+}
+
+.location-logo {
+    width: 25px;
+    height: auto;
+    opacity: 0.2;
+}
+
+.members-logo {
+    width: 25px;
+    height: auto;
+    opacity: 0.2; 
+}
+
+
+

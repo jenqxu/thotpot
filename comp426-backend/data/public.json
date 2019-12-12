@@ -1,120 +1,34 @@
 {
   "create": {
-    "description": "sea",
-    "date": "2019-12-12T05:37:03.820Z"
   },
   "events": {
-    "aylin": {
-      "eventName": "la",
-      "data": {
-        "description": "la",
-        "location": "",
-        "date": "2019-12-15T04:51:01.000Z",
-        "members": []
-      }
-    },
-    "jen": {
-      "eventName": "two",
-      "data": {
-        "description": "two",
-        "location": "",
-        "date": "2019-12-09T06:44:08.000Z",
-        "members": [
-          "jen"
-        ]
-      },
-      "date": "2019-12-09T06:44:08.000Z"
-    },
-    "jen-one": {
+    "jen-ummm": {
       "host": "jen",
-      "eventName": "one",
+      "eventName": "ummm",
       "data": {
-        "description": "one",
-        "location": "",
-        "date": "2019-12-09T04:22:48.709Z",
-        "members": [
-          "jen"
-        ]
+        "description": "uughghughguh",
+        "date": "2020-01-01T03:30:00.000Z"
       }
     },
-    "jen-two": {
+    "jen-poop": {
       "host": "jen",
-      "eventName": "two",
+      "eventName": "poop",
       "data": {
-        "description": "two",
-        "location": "",
-        "date": "2019-12-09T04:22:48.709Z",
-        "members": [
-          "jen"
-        ]
+        "description": "sasdfasdfasdf",
+        "date": "2019-12-28T04:34:53.000Z"
       }
     },
-    "jen-?": {
+    "jen-this is the latest post": {
       "host": "jen",
-      "eventName": "?",
+      "eventName": "this is the latest post",
       "data": {
-        "description": "we",
-        "location": "",
-        "date": "2019-12-09T04:20:26.810Z",
-        "members": [
-          "jen"
-        ]
+        "description": "asdfasdf",
+        "date": "2020-01-10T04:37:57.000Z"
       }
     },
-    "jen-lala": {
+    "jen-werweraw": {
       "host": "jen",
-      "eventName": "lala",
-      "data": {
-        "description": "pls",
-        "location": "",
-        "date": "2019-12-11T17:57:39.891Z",
-        "members": [
-          "jen"
-        ]
-      }
-    },
-    "king-for thots only": {
-      "host": "king",
-      "eventName": "for thots only",
-      "data": {
-        "description": "THOTPOT",
-        "location": "",
-        "date": "2019-12-18T22:00:00.000Z",
-        "members": [
-          "king"
-        ]
-      }
-    },
-    "jen-neckbear hotpot": {
-      "host": "jen",
-      "eventName": "Neckbear Hotpot",
-      "data": {
-        "description": "poo",
-        "date": "2019-12-11T22:05:42.773Z"
-      }
-    },
-    "jen-neckbeard%20hotpot": {
-      "host": "jen",
-      "eventName": "Neckbeard Hotpot",
-      "data": {
-        "description": "pls",
-        "date": "2019-12-11T22:05:42.773Z"
-      }
-    },
-    "jen-neckbeard hotpot": {
-      "host": "jen",
-      "eventName": "Neckbeard Hotpot",
-      "data": {
-        "description": "pls",
-        "date": "2019-12-11T22:29:09.859Z"
-      }
-    },
-    "jennifer-sleepy ": {
-      "host": "jennifer",
-      "eventName": "sleepy ",
-      "data": {
-        "description": "time",
-        "date": "2019-12-12T05:18:29.054Z"
+
       }
     }
   }

@@ -115,6 +115,7 @@ class HPEvent extends Component {
         });
 
         this.handleClose(); 
+        window.location.reload();
     }
 
     handleDate = date =>{

@@ -1,86 +1,112 @@
 import React, { Component } from 'react';
-import { CardDeck } from 'react-bootstrap';
+import { CardDeck, Navbar, Dropdown } from 'react-bootstrap';
 import './PostFeed.css'
-import Post from '../Post';
-
+import PublicPost from '../PublicPost';
+import PrivatePost from '../PrivatePost';
 import axios from 'axios';
-import { Button} from 'react-bootstrap';
 
 
 class PostFeed extends Component {
 
-    constructor(props){
-        super(props);
-        this.handleFeed = this.handleFeed.bind(this);
-        this.state={}
+  constructor(props) {
+    super(props);
+    this.handleFeed = this.handleFeed.bind(this);
+    this.state = {
+      posts: new Array()
     }
+  }
 
 
-    handleFeed = event => {
-        let authtoken = localStorage.getItem('JWT');
+  handleFeed() {
+    let authtoken = localStorage.getItem('JWT');
 
-        //Get events from Public data store
-        axios.get('http://localhost:9000/public/events').then(res => {
-        alert('Got events - public');
-            //this keeps the order of events made (like twitter, most recent)
-        for (let[key, value] of Object.entries(res.data.result)){
-            let host = value['host'];
-            let eventName = value['eventName'];
-            let date = value['data']['date'];
-            
+    if (!authtoken) {
+      //Get events from Public data store
+      axios.get('http://localhost:9000/public/events').then(res => {
+        console.log('Got events - public');
+        //this keeps the order of events made (like twitter, most recent)
+
+        let pubPosts = [];
+        for (let [key, value] of Object.entries(res.data.result)) {
+          pubPosts.push(value);
         }
+        this.setState({ posts: pubPosts });
 
-        /* //sorts alphabetically by host name
-        for (let key in res.data.result) {
-            let event = res.data.result[`${key}`];
-            let host = event['host'];
-            let eventName = event['eventName'];
-            let date = event['data']['date'];
+      }).catch(error => { alert(error) });
+    }
+
+    if (authtoken) {
+      //Get events from Private data store
+      axios.get('http://localhost:9000/private/events', {
+        'headers': { Authorization: `Bearer ${authtoken}` }
+      }).then(res => {
+        console.log('Got events - private');
+
+        let privPosts = [];
+        for (let [key, value] of Object.entries(res.data.result)) {
+          privPosts.push(value);
         }
-        */
+        this.setState({ posts: privPosts });
 
-    }).catch(error => {alert(error)});
-
-    //Get events from Private data store
-    axios.get('http://localhost:9000/private/events', {
-        'headers': {Authorization: `Bearer ${authtoken}`}
-        }).then(res => {
-        alert('Got events - private');
-    }).catch(error => {alert(error)});
+      }).catch(error => { alert(error) });
     }
+  }
 
-    handleDeletePost = () => {
-        alert("delete post");
-        axios.delete(`http://localhost:9000/public/yu`).catch(error => {alert('welp')});
-    }
+  handleDeletePost = () => {
+    console.log("delete post");
+    axios.delete(`http://localhost:9000/public/yu`).catch(error => { alert('welp') });
+  }
+
+  componentDidMount() {
+    this.handleFeed();
+  }
+
+  handleFirstPostedSort() {
+    this.state.posts.reverse();
+  }
+
+
 
   render() {
     return (
-        <div>
-            <CardDeck className='main'>
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            </CardDeck>
-
-
-            {/* <div>
-            <Button
-              variant='outline-dark'
-              className = "button-event"
-              onClick={this.handleFeed}
-              >
-              test - feed
-            </Button>         
-            </div> */}
-
-        </div>
-      
+      <div>
+        <Navbar style={{ justifyContent: 'flex-end', paddingRight: 75 }}>
+          <Dropdown>
+            <Dropdown.Toggle variant='outline-warning' id='dropdown-basic'>
+              Sort By...
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href='#/action-1' onClick={this.handleFirstPostedSort()}>Last Posted</Dropdown.Item>
+              <Dropdown.Item href='#/action-2' onClick={this.handleFirstPostedSort()}>First Posted</Dropdown.Item>
+              <Dropdown.Item href='#/action-3'>Soonest</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </Navbar>
+        <CardDeck className='main'>
+          {(() => {
+            if (!localStorage.getItem('JWT')) {
+              return this.state.posts.slice(0).reverse().map(post => (
+                <PublicPost
+                  hostName={post.host}
+                  name={post.eventName}
+                  description={post.data.description}
+                  date={post.data.date}
+                />
+              ))
+            } else {
+              return this.state.posts.slice(0).reverse().map(post => (
+                <PrivatePost
+                  hostName={post.host}
+                  name={post.eventName}
+                  description={post.data.description}
+                  membersGoing = {post.data.membersGoing}
+                  date={post.data.date}
+                />
+              ))
+            }
+          })()}
+        </CardDeck>
+      </div>
     );
   }
 }
